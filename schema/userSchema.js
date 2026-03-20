@@ -1,6 +1,6 @@
 const { default: mongoose } = require("mongoose");
 
-const mySchema = mongoose.Schema({
+const mySchema = new mongoose.Schema({
     name: String,
     age: Number,
     address: String,

@@ -6,6 +6,6 @@ const mySchema = new mongoose.Schema({
   address:String,
   number:Number
 })
-const collection = await mongoose.model('students',mySchema)
+const collection = mongoose.model('students',mySchema)
 
 module.exports = collection
