@@ -59,34 +59,56 @@
 
 //********************************CRUD Opartion (mongoose) & (MVC Pattern)************************************ */
 
-const express = require('express')
-const controller = require('./controller/studentController')
-const connectDB = require('./config/db')
-const app = express()
-const port = 3000
+// const express = require('express')
+// const controller = require('./controller/studentController')
+// const connectDB = require('./config/db')
+// const app = express()
+// const port = 3000
 
+// app.set('view engine', 'ejs')
+// app.use(express.urlencoded({extended : true}))
+
+// connectDB()
+
+// // student List get
+// app.get('/',controller.getStudent)
+
+// //add user route
+// app.get('/adduserRoute',controller.postuserRoute)
+
+// //post user
+// app.post('/postuser',controller.postuser)
+
+// //delete user
+// app.get('/deleteuser/:id',controller.deleteUser)
+
+// // handle nevigate
+// app.get('/update/:id',controller.handleNevigate)
+
+// //handle Update
+// app.post('/updateUser/:id',controller.handleUpdate)
+
+// app.listen(port, () => {
+//     console.log(`Server is running on port ${port}`);
+// });
+
+
+//********************************POST Data (Validation)************************************ */
+
+const express = require('express');
+const connectDB = require('./config/connectivity');
+const controller = require('./controller/valController');
+const app = express()
+const port = 3000;
+
+
+connectDB()
 app.set('view engine', 'ejs')
 app.use(express.urlencoded({extended : true}))
 
-connectDB()
+app.get('/',controller.addUser)
 
-// student List get
-app.get('/',controller.getStudent)
-
-//add user route
-app.get('/adduserRoute',controller.postuserRoute)
-
-//post user
-app.post('/postuser',controller.postuser)
-
-//delete user
-app.get('/deleteuser/:id',controller.deleteUser)
-
-// handle nevigate
-app.get('/update/:id',controller.handleNevigate)
-
-//handle Update
-app.post('/updateUser/:id',controller.handleUpdate)
+app.post('/submit',controller.postUser)
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
