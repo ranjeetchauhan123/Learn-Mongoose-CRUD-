@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>CRUD OPERATION (using mongoose) </h1><hr><hr>
+    <table border="1">
+        <h1>Get Request <a href="/adduserRoute">Add User</a></h1>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Number</th>
+            <th>Delete</th>
+            <th>Update</th>
+        </tr>
+        <% students.map((user)=>{%>
+        <tr>
+            <td><%= user.name%></td>
+            <td><%= user.age%></td>
+            <td><%= user.address%></td>
+            <td><%= user.number%></td>
+            <td><a href="/deleteuser/<%= user._id %>"><button>Delete</button></a></td>
+            <td><a href="/update/<%= user._id%>"><button>Update</button></a></td>
+        <%})%>
+        
+        </tr>
+            
+    </table>
+    
+
+</body>
+
+</html>

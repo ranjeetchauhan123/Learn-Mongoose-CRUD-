@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Update User</h1>
+
+    <form action="/updateUser/<%= student._id%>" method="POST">
+        <input type="text"placeholder="username..." name="name" value="<%=student.name %>"> <br><br>
+        <input type="number"placeholder="age..." name="age" value="<%=student.age %>"> <br><br>
+        <input type="text"placeholder="address" name="address" value="<%=student.address %>"> <br><br>
+        <input type="number"placeholder="number" name="number" value="<%=student.number %>"> <br><br>
+        <button>Post User</button>
+    </form>
+</body>
+</html>
